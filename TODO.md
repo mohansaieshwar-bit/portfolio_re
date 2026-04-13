@@ -1,13 +1,14 @@
-# Task Progress: Add Mohan image to hero-visual in src/App.jsx
+# GitHub Pages Deployment TODO
 
-## Completed Steps:
-- [x] Step 1: Confirmed image at src/img/mohan.png.
-- [x] Step 2: Edited src/App.jsx - Added `<img src="./img/mohan.png" alt="Mohan Sai Eshwar Boppudi - Profile" className="hero-image" />`.
-- [x] Step 3: Added `.hero-image` styles + flex centering to `.hero-visual` in src/styles.css.
+## Remaining Steps:
+- [x] 1. Create directories and copy image
+- [x] 2. Update vite.config.js
+- [x] 3. Update src/App.jsx
+- [x] 4. Create deploy.yml
+- [x] 5. Delete old img dir
+- [x] 6. Test npm run build & preview
+- [ ] 7. Commit & push
+- [ ] 8. Configure repo settings Pages -> GitHub Actions
 
-## Pending Steps:
-- [ ] Step 4: Test in browser (HMR active, view at http://localhost:5173).
+Last updated: Initial creation
 
-## Notes:
-- Changes auto-applied via HMR.
-- Task complete after verification.

@@ -57,7 +57,7 @@ function SectionHeader({ label, title, text }) {
   );
 }
 
-import mohanImg from './img/mohan.png';
+// Image moved to public/img/mohan.png
 
 function App() {
   return (
@@ -117,7 +117,7 @@ function App() {
           </div>
 
           <div className="hero-visual panel-soft">
-            <img src={mohanImg} alt="Mohan Sai Eshwar Boppudi - Profile" className="hero-image" />
+            <img src="/img/mohan.png" alt="Mohan Sai Eshwar Boppudi - Profile" className="hero-image" />
           </div>
         </section>
 
