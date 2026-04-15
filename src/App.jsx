@@ -89,7 +89,7 @@ function App() {
           <div className="hero-visual brutal-card brutal-white">
             <div className="photo-wrap brutal-card brutal-orange">
               <img
-                src="/img/mohan.png"
+                src={`${import.meta.env.BASE_URL}img/mohan.png`}
                 alt="Mohan Sai Eshwar Boppudi - Profile"
                 className="hero-image"
               />

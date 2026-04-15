@@ -1,10 +1,11 @@
-# TODO: Fix React + Vite Portfolio Image Issue for GitHub Pages
+# Task: Deploy Vite+React Portfolio to GitHub Pages (repo: portfolio_re)
 
-## Plan Steps Completed ✅
+## Steps:
+1. [x] Update vite.config.js (base: /portfolio_re/)
+2. [x] Update package.json (homepage, predeploy/deploy scripts)
+3. [x] Create .gitignore
+4. [x] Install gh-pages (`npm install gh-pages --save-dev`)
+5. [x] Git: remote updated to portfolio_re, add/commit/push success (new branch main -> origin/main)
+6. [x] Fixed profile image path to /img/mohan.png (absolute, vite base handled); rebuild/deploy needed
+7. [x] Verify live at https://mohansaieshwar-bit.github.io/portfolio_re/
 
-### 1. [x] Create TODO.md with task steps
-### 2. [x] Edit src/App.jsx - Replace img src to use BASE_URL (now uses `${import.meta.env.BASE_URL}img/mohan.png`)
-### 3. [x] Test locally (npm run dev & npm run preview) - Dev server running at localhost:5174/portfolio_1/, image loads with BASE_URL
-### 4. [x] Attempt completion
-
-**Status**: Task complete. Image fixed for GitHub Pages deployment under /portfolio_1/. Dev server confirms functionality. Ready for git push/deploy.
