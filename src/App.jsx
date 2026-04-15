@@ -47,126 +47,106 @@ const certifications = [
   'Prompt Design in Vertex AI — Google Cloud',
 ];
 
-function SectionHeader({ label, title, text }) {
+function SectionTitle({ eyebrow, title, text }) {
   return (
-    <div className="section-header">
-      <p className="label">{label}</p>
+    <div className="section-title">
+      <span className="eyebrow">{eyebrow}</span>
       <h2>{title}</h2>
-      {text ? <p className="section-copy">{text}</p> : null}
+      {text ? <p>{text}</p> : null}
     </div>
   );
 }
 
-// Image moved to public/img/mohan.png
-
 function App() {
   return (
-    <div className="site-root">
-      <div className="orb orb-one" />
-      <div className="orb orb-two" />
-      <div className="orb orb-three" />
-
-      <header className="nav-shell">
-        <div className="nav-inner">
-          <a className="brand" href="#home">
-            MOHAN
-          </a>
-          <nav className="nav-links" aria-label="Primary Navigation">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-          </nav>
-        </div>
+    <div className="neo-site">
+      <header className="topbar shell brutal-card">
+        <a className="brand" href="#home">MOHAN</a>
+        <nav className="nav-links" aria-label="Primary Navigation">
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
       </header>
 
-      <main className="page" id="home">
-        <section className="hero panel">
-          <div className="hero-copy-block">
-            <p className="label">Portfolio • UI/UX • Frontend</p>
+      <main className="shell" id="home">
+        <section className="hero-grid">
+          <div className="hero-copy brutal-card brutal-yellow">
+            <span className="hero-chip">UI/UX • Frontend • Portfolio</span>
             <h1>
-              Mohan Sai <span>Eshwar Boppudi,</span>
+              Mohan Sai <span>Eshwar </span>
             </h1>
-            <p className="hero-copy">
-              UI/UX Designer and Front-End Developer who enjoys building thoughtful interfaces that feel clear, elegant, and easy to use.
+            <p>
+              UI/UX Designer and Front-End Developer creating bold, functional, user-friendly digital experiences with strong visual structure and practical frontend execution.
             </p>
-
             <div className="hero-actions">
-              <a className="button button-primary" href="#projects">
-                View Projects
-              </a>
-              <a className="button button-secondary" href="#contact">
-                Contact Me
-              </a>
+              <a className="neo-button neo-button-dark" href="#projects">View Projects</a>
+              <a className="neo-button" href="#contact">Contact Me</a>
             </div>
-
-            {/* <div className="metrics-grid">
-              <article className="mini-panel">
-                <strong>2+ Years</strong>
-                <span>UI/UX and Frontend experience</span>
-              </article>
-              <article className="mini-panel">
-                <strong>20+ Prototypes</strong>
-                <span>High-fidelity design work</span>
-              </article>
-              <article className="mini-panel">
-                <strong>40%</strong>
-                <span>Engagement improvement impact</span>
-              </article>
-            </div> */}
           </div>
 
-          <div className="hero-visual panel-soft">
-            <img src={`${import.meta.env.BASE_URL}img/mohan.png`} alt="Mohan Sai Eshwar Boppudi - Profile" className="hero-image" />
+          <div className="hero-visual brutal-card brutal-white">
+            <div className="photo-wrap brutal-card brutal-orange">
+              <img
+                src="/img/mohan.png"
+                alt="Mohan Sai Eshwar Boppudi - Profile"
+                className="hero-image"
+              />
+            </div>
+            <div className="floating-note brutal-card brutal-green rotate-right-soft">Available for UI/UX and frontend roles</div>
           </div>
         </section>
 
-        <section id="about" className="section-block two-column">
-          <article className="panel content-panel">
-            <SectionHeader
-              label="About Me"
-              title="I create interfaces that are clear, modern, and easy to trust"
-              text="My work combines user-centered design, visual polish, and practical frontend development."
+        <section id="about" className="content-grid two-up">
+          <article className="brutal-card brutal-white section-card">
+            <SectionTitle
+              eyebrow="About"
+              title="I design clear products with strong personality"
+              text="I like interfaces that feel expressive, useful, and easy to trust."
             />
             <p>
-              I work across wireframing, prototyping, responsive development, accessibility, and design systems. I like interfaces that feel calm, balanced, and premium without becoming hard to use.
+              My work blends wireframing, prototyping, responsive frontend development, accessibility, and design systems. I enjoy taking ideas from concept to polished interface while keeping the user experience clear.
             </p>
           </article>
 
-          <article className="panel content-panel quick-facts">
-            <SectionHeader label="Quick Highlights" title="What I bring" />
-            <div className="fact-list">
-              <div className="fact-item">
+          <article className="brutal-card brutal-lime section-card">
+            <SectionTitle eyebrow="Quick Highlights" title="What I bring" />
+            <div className="bullet-stack">
+              <div>
                 <strong>Design + Development</strong>
-                <span>Comfortable bridging product design and frontend execution.</span>
+                <span>Comfortable working between product design and implementation.</span>
               </div>
-              <div className="fact-item">
+              <div>
                 <strong>Responsive Thinking</strong>
-                <span>Focused on desktop and mobile experience quality.</span>
+                <span>Focused on mobile and desktop experience quality.</span>
               </div>
-              <div className="fact-item">
+              <div>
                 <strong>Usability First</strong>
-                <span>Interested in clean information flow and user-friendly structure.</span>
+                <span>Interested in clean layout, flow, and user-friendly structure.</span>
               </div>
             </div>
           </article>
         </section>
 
-        <section id="experience" className="section-block">
-          <SectionHeader
-            label="Experience"
-            title="Work that connects product design and frontend implementation"
-            text="A practical mix of design thinking, interface building, testing, and collaboration."
+        <section id="experience" className="stack-section">
+          <SectionTitle
+            eyebrow="Experience"
+            title="Work that connects product thinking and frontend craft"
+            text="A practical mix of interface design, testing, prototyping, and responsive development."
           />
-          <div className="experience-list">
-            {experiences.map((item) => (
-              <article className="panel experience-card" key={`${item.company}-${item.period}`}>
-                <div className="experience-top">
+          <div className="stack-grid">
+            {experiences.map((item, index) => (
+              <article
+                className={`brutal-card section-card experience-card ${index % 2 === 0 ? 'brutal-pink' : 'brutal-blue'}`}
+                key={`${item.company}-${item.period}`}
+              >
+                <div className="row-split">
                   <div>
                     <h3>{item.role}</h3>
-                    <p className="subtle-line">{item.company}</p>
+                    <p className="meta-line">{item.company}</p>
                   </div>
-                  <div className="experience-meta">
+                  <div className="meta-box brutal-card brutal-white">
                     <span>{item.period}</span>
                     <span>{item.location}</span>
                   </div>
@@ -181,28 +161,26 @@ function App() {
           </div>
         </section>
 
-        <section id="projects" className="section-block">
-          <SectionHeader
-            label="Projects"
-            title="Selected work presented in a simple and polished way"
-            text="A premium-style case study block focused on clarity, flow, and outcomes."
+        <section id="projects" className="stack-section">
+          <SectionTitle
+            eyebrow="Projects"
+            title="Selected work with bold presentation"
+            text="A cleaner case-study style section for product, design, and interface work."
           />
-          <div className="project-grid">
+          <div className="stack-grid single-project">
             {projects.map((project) => (
-              <article className="panel project-card" key={project.title}>
-                <div className="project-head">
+              <article className="brutal-card brutal-yellow section-card project-card" key={project.title}>
+                <div className="row-split project-head">
                   <div>
-                    <p className="subtle-line">{project.subtitle}</p>
+                    <span className="mini-label">{project.subtitle}</span>
                     <h3>{project.title}</h3>
                   </div>
-                  <span className="pill">Case Study</span>
+                  <span className="tag brutal-card brutal-white">Case Study</span>
                 </div>
                 <p>{project.description}</p>
-                <div className="tag-group">
+                <div className="tag-cloud">
                   {project.impact.map((tag) => (
-                    <span className="tag" key={tag}>
-                      {tag}
-                    </span>
+                    <span className="tag brutal-card brutal-white" key={tag}>{tag}</span>
                   ))}
                 </div>
               </article>
@@ -210,18 +188,16 @@ function App() {
           </div>
         </section>
 
-        <section className="section-block two-column">
-          <article className="panel content-panel">
-            <SectionHeader label="Skills" title="Tools and strengths" />
-            <div className="skills-groups">
-              {Object.entries(skills).map(([group, items]) => (
-                <div className="skill-block" key={group}>
+        <section className="content-grid two-up lower-grid">
+          <article className="brutal-card brutal-white section-card">
+            <SectionTitle eyebrow="Skills" title="Tools and strengths" />
+            <div className="skills-grid">
+              {Object.entries(skills).map(([group, items], index) => (
+                <div className={`skill-panel brutal-card ${index % 2 === 0 ? 'brutal-orange' : 'brutal-green'}`} key={group}>
                   <h3>{group}</h3>
-                  <div className="tag-group">
+                  <div className="tag-cloud compact">
                     {items.map((item) => (
-                      <span className="tag" key={item}>
-                        {item}
-                      </span>
+                      <span className="tag brutal-card brutal-white" key={item}>{item}</span>
                     ))}
                   </div>
                 </div>
@@ -229,8 +205,8 @@ function App() {
             </div>
           </article>
 
-          <article className="panel content-panel">
-            <SectionHeader label="Certifications" title="Learning and growth" />
+          <article className="brutal-card brutal-pink section-card">
+            <SectionTitle eyebrow="Certifications" title="Learning and growth" />
             <ul className="cert-list">
               {certifications.map((item) => (
                 <li key={item}>{item}</li>
@@ -239,26 +215,21 @@ function App() {
           </article>
         </section>
 
-        <section id="contact" className="section-block">
-          <article className="panel contact-panel">
-            <SectionHeader
-              label="Contact"
-              title="Let’s build something thoughtful and meaningful"
+        <section id="contact" className="stack-section">
+          <article className="brutal-card brutal-black section-card contact-panel">
+            <SectionTitle
+              eyebrow="Contact"
+              title="Let’s build something bold and useful"
               text="Open to UI/UX, frontend, and product-focused opportunities."
             />
             <div className="contact-grid">
-              <a className="contact-box" href="mailto:mohansaieshwarboppudi@gmail.com">
-                <span className="icon-badge">✉</span>
+              <a className="brutal-card brutal-white contact-box" href="mailto:mohansaieshwarboppudi@gmail.com">
+                <span className="contact-icon">✉</span>
                 <p>Email</p>
                 <strong>mohansaieshwarboppudi@gmail.com</strong>
               </a>
-              <div className="contact-box">
-                <span className="icon-badge">⌂</span>
-                <p>Location</p>
-                <strong>Milwaukee, WI</strong>
-              </div>
-              <a className="contact-box" href="https://linktr.ee/mohansaieshwar" target="_blank" rel="noreferrer">
-                <span className="icon-badge">↗</span>
+              <a className="brutal-card brutal-blue contact-box" href="https://linktr.ee/mohansaieshwar" target="_blank" rel="noreferrer">
+                <span className="contact-icon">↗</span>
                 <p>Portfolio Hub</p>
                 <strong>View more links</strong>
               </a>
@@ -271,3 +242,4 @@ function App() {
 }
 
 export default App;
+
